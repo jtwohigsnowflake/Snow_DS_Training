@@ -14,6 +14,13 @@ MODE = EGRESS
 TYPE = HOST_PORT
 VALUE_LIST = ('pypi.org','raw.githubusercontent.com', 'pypi.python.org', 'pythonhosted.org',  'files.pythonhosted.org');
 
+CREATE OR REPLACE EXTERNAL ACCESS INTEGRATION pypi_access_integration
+ALLOWED_NETWORK_RULES = (pypi_network_rule)
+ENABLED = true;
+
+GRANT USAGE ON INTEGRATION pypi_access_integration TO ROLE sysadmin; -- replace sysadmin with your data scientists role
+
+
 -- GPU Compute Pool
 CREATE COMPUTE POOL notebook_GPU_S
 MIN_NODES = 1
