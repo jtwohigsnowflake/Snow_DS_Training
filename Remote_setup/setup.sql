@@ -6,7 +6,7 @@ use role accountadmin;
 GRANT BIND SERVICE ENDPOINT ON ACCOUNT TO ROLE sysadmin;
 
 -- Create network rule for external access
-CREATE NETWORK RULE administration.publicallow_all_rule
+CREATE NETWORK RULE administration.public.allow_all_rule
   MODE = EGRESS
   TYPE = HOST_PORT
   VALUE_LIST = ('0.0.0.0:443', '0.0.0.0:80');
