@@ -45,7 +45,7 @@ snow connection list
 snow remote start \
   my_remote_dev \
   --compute-pool remote_pool \
-  --eai-name ALLOW_ALL_INTEGRATION \
+  --eai-name pypi_access_integration \
   --stage ADMINISTRATION.PUBLIC.REMOTE \
   --ssh
 
