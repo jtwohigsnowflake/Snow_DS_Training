@@ -4,8 +4,6 @@ Snowflake Intelligence, a new application, empowers users to create and interact
 
 ## What you’ll do:
 
-It is recommended that you **download** this document from Compass and run it from your GDrive. That will make copying and pasting a lot easier, as sometimes formatting can go wrong when copying and pasting directly from Compass.
-
 This lab explores accessing festival data (ticket sales, customer details, events) and a parsed result of multiple bands' contract information. We'll join these datasets and build a semantic model using synonyms and defining relationships among the tables. This model will then be used in a prompt to retrieve data from Snowflake for end users via a simple chat-like interface. Consequently, users can obtain answers and data visualizations without needing SQL knowledge, understanding unstructured data queries, or data modeling concepts.
 
 Below is an outline of the lab:
@@ -24,3 +22,5 @@ Below is an outline of the lab:
 * **Democratize intelligence:** Access and analyze thousands of data sources simultaneously, going beyond basic AI tools that only handle single documents.  
 * **Comprehensive integration:** Seamlessly analyze structured and unstructured data together. Connect insights from spreadsheets, documents, images, and databases simultaneously.   
 * **Automatic security:** Existing Snowflake security controls, including role-based access and data masking, automatically apply to all AI interactions and conversations.
+
+## Open the instructions.pdf and you'll have your first agent deployed in minutes!
