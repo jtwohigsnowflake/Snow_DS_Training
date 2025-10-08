@@ -195,7 +195,6 @@ cython_debug/
 .pypirc
 
 # Marimo
-Marimo_SPCS/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
