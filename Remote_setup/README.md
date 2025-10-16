@@ -17,8 +17,7 @@ Get a full VS Code environment running in your browser - no local setup required
 1. **Run the SQL Setup Script**
    
    Execute the `setup.sql` file in your Snowflake account.  You can replace the sysadmin role with whatever role will need the ability to leverage Remote Dev such as Data Scientist role. This script will:
-   - Create network rules for external access
-   - Set up external access integration
+   - Set up external access integration (Optional)
    - Create a dedicated compute pool for remote development
    - Configure the necessary stage for file storage for when the service is shut down
 
@@ -79,7 +78,7 @@ Get a full VS Code environment running in your browser - no local setup required
    This command will:
    - Create a remote development environment named `my_remote_dev`
    - Use the your compute pool
-   - Apply the external access integration
+   - Apply the external access integration (THIS IS OPTIONAL)
    - Mount the specified stage for persistent storage
    - Enable SSH access
 
