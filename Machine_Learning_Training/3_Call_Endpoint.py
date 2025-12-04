@@ -14,7 +14,7 @@ if not pat_token:
 
 headers = get_headers(pat_token)
 
-URL = "https://bfc46pfe-sfsenorthamerica-cromano.snowflakecomputing.app/predict-proba"
+URL = "https://bjc46pfe-sfsenorthamerica-cromano.snowflakecomputing.app/predict-proba"
 
 data = {
     "data": [
