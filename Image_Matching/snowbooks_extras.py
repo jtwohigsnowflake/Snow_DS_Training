@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 from snowbook.executor import sql_executor
 
 if "patched" not in st.session_state:

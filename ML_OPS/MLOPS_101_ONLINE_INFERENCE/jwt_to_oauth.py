@@ -5,7 +5,7 @@ import sys
 import os
 import time
 from datetime import timedelta
-from typing import Dict, Any, Optional
+from typing import Optional
 
 import requests
 
