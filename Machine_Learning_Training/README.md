@@ -21,13 +21,3 @@
 # Install dependencies using uv
 uv sync
 ```
-
-## Usage
-
-The main model implementation can be found in `MORTGAGE_MODEL_1.ipynb`.
-
-## Project Structure
-
-- `MORTGAGE_LENDING_DEMO_DATA.csv.zip` - Demo dataset
-- `pyproject.toml` - Project configuration and dependencies
-
