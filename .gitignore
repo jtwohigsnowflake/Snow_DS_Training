@@ -3,6 +3,10 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Streamlit project folders (app code and local config)
+streamlit/
+.streamlit/
+
 # C extensions
 *.so
 
