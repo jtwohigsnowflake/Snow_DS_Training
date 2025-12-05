@@ -1,26 +1,24 @@
 -- For this demo we have a database called adminstration and schema public to store account level rules
-
 use role accountadmin;
 
 -- Need Bind Service Endpoint to sysadmin so sysadmin can access service endpoints
 GRANT BIND SERVICE ENDPOINT ON ACCOUNT TO ROLE sysadmin;
 
--- Create network rule for external access
-CREATE NETWORK RULE administration.publicallow_all_rule
-  MODE = EGRESS
-  TYPE = HOST_PORT
-  VALUE_LIST = ('0.0.0.0:443', '0.0.0.0:80');
+-- Create network rule for external access (OPTIONAL)
+CREATE OR REPLACE NETWORK RULE pypi_network_rule
+MODE = EGRESS
+TYPE = HOST_PORT
+VALUE_LIST = ('pypi.org', 'pypi.python.org', 'pythonhosted.org', 'files.pythonhosted.org');
 
--- Create external access integration
-CREATE EXTERNAL ACCESS INTEGRATION ALLOW_ALL_INTEGRATION
-ALLOWED_NETWORK_RULES = (allow_all_rule)
+CREATE OR REPLACE EXTERNAL ACCESS INTEGRATION pypi_access_integration
+ALLOWED_NETWORK_RULES = (pypi_network_rule)
 ENABLED = true;
 
-grant usage on INTEGRATION ALLOW_ALL_INTEGRATION to role sysadmin;
+grant usage on INTEGRATION pypi_access_integration to role sysadmin;
 
+-- create the dedicated compute pool for the remote setup (OPTIONAL: You can use the default or an existing pool)
 use role accountadmin;
 
--- create the dedicated compute pool for the remote setup
 CREATE COMPUTE POOL remote_pool
   MIN_NODES = 1
   MAX_NODES = 1
@@ -47,7 +45,7 @@ snow connection list
 snow remote start \
   my_remote_dev \
   --compute-pool remote_pool \
-  --eai-name ALLOW_ALL_INTEGRATION \
+  --eai-name pypi_access_integration \
   --stage ADMINISTRATION.PUBLIC.REMOTE \
   --ssh
 
